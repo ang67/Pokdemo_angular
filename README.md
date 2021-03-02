@@ -28,5 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Links
 TP: https://github.com/dekpro/teaching-jxs-angular
+
 e.g accès http: https://guide-angular.wishtack.io/angular/http/utilisation-de-httpclient
+
 e.g accès http: https://stackblitz.com/angular/xnxdrjyyrgj?file=src%2Fapp%2Fhero.ts
