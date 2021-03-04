@@ -32,3 +32,4 @@ TP: https://github.com/dekpro/teaching-jxs-angular
 e.g accès http: https://guide-angular.wishtack.io/angular/http/utilisation-de-httpclient
 
 e.g accès http: https://stackblitz.com/angular/xnxdrjyyrgj?file=src%2Fapp%2Fhero.ts
+## next
