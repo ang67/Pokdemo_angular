@@ -1,9 +1,9 @@
 <input [(ngModel)]="id">
 <br><br>
 <input type="text" value={{id}} readonly >
+<br><br>
 <h1>ID: {{id}}</h1>
 
-<br><br>
 <label for="filter">Filter</label><br>
 <input type="text" name="filter" [(ngModel)]="searchString">
 <br><br>
@@ -14,7 +14,3 @@
 
 <br><br>
 <button (click)="valider(id)">Go</button>
-    
- <div>
-     {{pokemons}}
- </div>

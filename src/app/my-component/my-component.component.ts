@@ -1,32 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { from, pipe } from 'rxjs';
+import { from, Observable, pipe, Subscription } from 'rxjs';
 import { Pokemon } from '../pokemon';
-import { FilterPokemonPipePipe } from '../filter-pokemon--pipe.pipe';
-import { PokeApiService } from '../poke-api-service';
-
+import { FilterPokemonPipePipe } from '../pipes/filter-pokemon--pipe.pipe';
+import { HttpClient } from '@angular/common/http';
+import { PokeApiListResponse } from '../poke-api-list-response';
+import { PokeApiService } from '../services/poke-api.service'
 @Component({
   selector: 'app-my-component',
   templateUrl: './my-component.component.html',
   styleUrls: ['./my-component.component.css'],
-  providers: [Pokemon,
+  providers: [
     FilterPokemonPipePipe,
-    PokeApiService
+    //PokeApiService,
   ],
   //pipes: [FilterPokemonPipePipe]
 })
 export class MyComponentComponent implements OnInit {
   id: string = '';
   searchString: string = '';
-  pokemons;
-  constructor(private _pokemons: Pokemon) {
-    this.pokemons = _pokemons.getPokemons()
+  pokemons: any[] = [];
+  pokemonListUrlUrl = 'http://pokeapi.co/api/v2/pokedex/1';
+
+  private pokeapiserviceSubscription: Subscription = new Subscription();
+
+  constructor(private pokeapiservice: PokeApiService) { }
+
+  ngOnInit() {
+    this.pokeapiserviceSubscription = this.pokeapiservice.getPokemons()
+      .subscribe(pokemons => this.pokemons = pokemons);
   }
 
-  ngOnInit() { }
-
-  valider(e:any) {
+  valider(e: any) {
     console.log(e);
   }
 
-
+  ngOnDestroy() {
+    this.pokeapiserviceSubscription.unsubscribe();
+  }
 }
