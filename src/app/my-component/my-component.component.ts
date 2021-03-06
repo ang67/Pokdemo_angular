@@ -18,8 +18,7 @@ import { PokeApiService } from '../services/poke-api.service'
 export class MyComponentComponent implements OnInit {
   id: string = '';
   searchString: string = '';
-  pokemons: any[] = [];
-  pokemonListUrlUrl = 'http://pokeapi.co/api/v2/pokedex/1';
+  pokemons: Pokemon[] = [];
 
   private pokeapiserviceSubscription: Subscription = new Subscription();
 
@@ -32,6 +31,8 @@ export class MyComponentComponent implements OnInit {
 
   valider(e: any) {
     console.log(e);
+    this.pokeapiservice.getPokemonsInfos(e).subscribe(info => console.log(info));
+    this.pokeapiservice.getPokemonsInfos(e).subscribe(info => console.log(info));
   }
 
   ngOnDestroy() {

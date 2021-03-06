@@ -1,8 +1,7 @@
 <input [(ngModel)]="id">
+<!--<input type="text" value={{id}} readonly > -->
 <br><br>
-<input type="text" value={{id}} readonly >
-<br><br>
-<h1>ID: {{id}}</h1>
+<h1 *ngIf="id">ID: #{{id}}</h1>
 
 <label for="filter">Filter</label><br>
 <input type="text" name="filter" [(ngModel)]="searchString">
