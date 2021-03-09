@@ -33,5 +33,5 @@ e.g accès http: https://guide-angular.wishtack.io/angular/http/utilisation-de-h
 
 e.g accès http: https://stackblitz.com/angular/xnxdrjyyrgj?file=src%2Fapp%2Fhero.ts
 
-https://avatars.githubusercontent.com/u/41009567?s=60&v=4
+<img src="https://avatars.githubusercontent.com/u/41009567?s=60&v=4">
 ## next
